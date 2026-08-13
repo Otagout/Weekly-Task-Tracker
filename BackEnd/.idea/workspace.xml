@@ -4,28 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fa0e387-36ca-4d9f-9fdb-2dfb5ba7c9eb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/Weekly planner.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/BackEnd.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weekly-planner/src/main/java/com/example/weekly_planner/Controllers/TaskController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weekly-planner/src/main/java/com/example/weekly_planner/Controllers/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weekly-planner/src/main/java/com/example/weekly_planner/Controllers/WeekController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weekly-planner/src/main/java/com/example/weekly_planner/Repositories/TaskRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weekly-planner/src/main/java/com/example/weekly_planner/Repositories/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weekly-planner/src/main/java/com/example/weekly_planner/Repositories/WeekRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weekly-planner/src/main/java/com/example/weekly_planner/entity/Task.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weekly-planner/src/main/java/com/example/weekly_planner/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weekly-planner/src/main/java/com/example/weekly_planner/entity/Week.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
+    <list default="true" id="2fa0e387-36ca-4d9f-9fdb-2dfb5ba7c9eb" name="Changes" comment=" implement User, Week and Task entities with JPA relationships">
+      <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/weekly-planner/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/weekly-planner/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/weekly-planner/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/weekly-planner/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/weekly-planner/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/weekly-planner/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/weekly-planner/src/main/java/com/example/weekly_planner/WeeklyPlannerApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/weekly-planner/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/weekly-planner/src/test/java/com/example/weekly_planner/WeeklyPlannerApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,9 +106,22 @@
       <option name="presentableId" value="Default" />
       <updated>1786576786984</updated>
     </task>
+    <task id="LOCAL-00001" summary=" implement User, Week and Task entities with JPA relationships">
+      <option name="closed" value="true" />
+      <created>1786638952192</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1786638952192</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value=" implement User, Week and Task entities with JPA relationships" />
+    <option name="LAST_COMMIT_MESSAGE" value=" implement User, Week and Task entities with JPA relationships" />
   </component>
 </project>
