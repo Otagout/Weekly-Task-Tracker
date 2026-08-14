@@ -7,6 +7,8 @@ import com.example.weekly_planner.entity.User;
 import com.example.weekly_planner.entity.Week;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/weeks")
 
@@ -20,6 +22,10 @@ public class WeekController {
         this.weekRepository = weekRepository;
                 this.userRepository = userRepository;
     }
+    @GetMapping
+    public List<Week> getWeeks(){
+        return weekRepository.findAll();
+    }
 
     @PostMapping
     public Week createWeek(@RequestParam("user_id") Long userId , @RequestBody Week week){
@@ -29,4 +35,16 @@ public class WeekController {
         return weekRepository.save(week);
 
     }
+    @PutMapping
+    public Week updateWeek(@RequestParam("user_id") Long id , @RequestBody Week week){
+        User userExist = userRepository.findById(id)
+                .orElseThrow();
+        Week weekExist = weekRepository.findById(week.getId())
+                .orElseThrow();
+
+        weekExist.setWeekStart(week.getWeekStart());
+        weekExist.setWeekEnd(week.getWeekEnd());
+        return  weekRepository.save(weekExist);
+    }
 }
+

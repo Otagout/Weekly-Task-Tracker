@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fa0e387-36ca-4d9f-9fdb-2dfb5ba7c9eb" name="Changes" comment=" implement User, Week and Task entities with JPA relationships">
-      <change beforePath="$PROJECT_DIR$/weekly-planner/src/main/java/com/example/weekly_planner/WeeklyPlannerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/weekly-planner/src/main/java/com/example/weekly_planner/WeeklyPlannerApplication.java" afterDir="false" />
+    <list default="true" id="2fa0e387-36ca-4d9f-9fdb-2dfb5ba7c9eb" name="Changes" comment="te">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weekly-planner/src/main/java/com/example/weekly_planner/Controllers/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/weekly-planner/src/main/java/com/example/weekly_planner/Controllers/TaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weekly-planner/src/main/java/com/example/weekly_planner/Controllers/WeekController.java" beforeDir="false" afterPath="$PROJECT_DIR$/weekly-planner/src/main/java/com/example/weekly_planner/Controllers/WeekController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,7 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="19" />
+    <option name="cachedIndexableFilesCount" value="28" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -106,7 +108,15 @@
       <option name="project" value="LOCAL" />
       <updated>1786639382717</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="te">
+      <option name="closed" value="true" />
+      <created>1786639417892</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1786639417892</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -114,6 +124,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value=" implement User, Week and Task entities with JPA relationships" />
-    <option name="LAST_COMMIT_MESSAGE" value=" implement User, Week and Task entities with JPA relationships" />
+    <MESSAGE value="te" />
+    <option name="LAST_COMMIT_MESSAGE" value="te" />
   </component>
 </project>
