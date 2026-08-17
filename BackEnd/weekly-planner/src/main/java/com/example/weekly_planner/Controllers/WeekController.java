@@ -46,5 +46,12 @@ public class WeekController {
         weekExist.setWeekEnd(week.getWeekEnd());
         return  weekRepository.save(weekExist);
     }
+
+    @DeleteMapping("/{id}")
+    public void deleteWeek(@PathVariable Long id){
+        Week Existingweek =weekRepository.findById(id)
+                .orElseThrow();
+        weekRepository.delete(Existingweek);
+    }
 }
 
