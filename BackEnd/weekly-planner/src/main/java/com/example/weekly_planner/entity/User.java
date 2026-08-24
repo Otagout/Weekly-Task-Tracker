@@ -36,8 +36,11 @@ public class User implements UserDetails {
     private LocalDateTime verificationCodeExpiresAt ;
 
 
-    public User(){}
-
+    public User(String username, String email, String password) {
+        this.name = username;
+        this.email = email;
+        this.password = password;
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
