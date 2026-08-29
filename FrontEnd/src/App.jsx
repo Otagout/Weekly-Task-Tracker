@@ -1,8 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
-import Task from "./pages/Task";
-import Index from "../public/index";
+ import Task from "../src/Pages/Task";
  
 
 function App() {
@@ -11,8 +10,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Task />} />
              
-                <Route path="/index" element={<Index />} />
-
+ 
             </Routes>
         </BrowserRouter>
     );

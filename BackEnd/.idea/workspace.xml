@@ -5,18 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2fa0e387-36ca-4d9f-9fdb-2dfb5ba7c9eb" name="Changes" comment="Added JwtService for JWT generation and validation&#10;Added JWT claim extraction&#10;Added username and expiration extraction&#10;Added configurable JWT secret and expiration properties&#10;Added token signing and verification">
-      <change afterPath="$PROJECT_DIR$/weekly-planner/src/main/java/com/example/weekly_planner/Controllers/AuthenticationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weekly-planner/src/main/java/com/example/weekly_planner/Respones/LoginResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weekly-planner/src/main/java/com/example/weekly_planner/config/EmailConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weekly-planner/src/main/java/com/example/weekly_planner/dto/LoginUserDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weekly-planner/src/main/java/com/example/weekly_planner/dto/RegisterUserDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weekly-planner/src/main/java/com/example/weekly_planner/dto/VerifyUserDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weekly-planner/src/main/java/com/example/weekly_planner/sevice/AuthenticationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weekly-planner/src/main/java/com/example/weekly_planner/sevice/EmailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weekly-planner/src/main/java/com/example/weekly_planner/sevice/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weekly-planner/src/main/java/com/example/weekly_planner/Controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/weekly-planner/src/main/java/com/example/weekly_planner/Controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weekly-planner/src/main/java/com/example/weekly_planner/Controllers/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/weekly-planner/src/main/java/com/example/weekly_planner/Controllers/TaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weekly-planner/src/main/java/com/example/weekly_planner/Controllers/WeekController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weekly-planner/src/main/java/com/example/weekly_planner/Repositories/WeekRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weekly-planner/src/main/java/com/example/weekly_planner/config/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/weekly-planner/src/main/java/com/example/weekly_planner/config/JwtAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weekly-planner/src/main/java/com/example/weekly_planner/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/weekly-planner/src/main/java/com/example/weekly_planner/config/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weekly-planner/src/main/java/com/example/weekly_planner/entity/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/weekly-planner/src/main/java/com/example/weekly_planner/entity/Task.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weekly-planner/src/main/java/com/example/weekly_planner/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/weekly-planner/src/main/java/com/example/weekly_planner/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weekly-planner/src/main/java/com/example/weekly_planner/entity/Week.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weekly-planner/src/main/java/com/example/weekly_planner/sevice/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/weekly-planner/src/main/java/com/example/weekly_planner/sevice/JwtService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weekly-planner/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/weekly-planner/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FrontEnd/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FrontEnd/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FrontEnd/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/App.jsx" afterDir="false" />
@@ -28,7 +27,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="39" />
+    <option name="cachedIndexableFilesCount" value="42" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -75,6 +74,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;JUnit.WeeklyPlannerApplicationTests.executor&quot;: &quot;Run&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -154,7 +154,15 @@
       <option name="project" value="LOCAL" />
       <updated>1787272412411</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added JwtService for JWT generation and validation&#10;Added JWT claim extraction&#10;Added username and expiration extraction&#10;Added configurable JWT secret and expiration properties&#10;Added token signing and verification">
+      <option name="closed" value="true" />
+      <created>1787529957160</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1787529957160</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -1,6 +1,5 @@
 package com.example.weekly_planner.entity;
 
-import com.example.weekly_planner.entity.Week;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -30,10 +29,6 @@ public class Task {
     private LocalDateTime createdAt;
 
     private LocalDateTime updatedAt;
-
-    @ManyToOne
-    @JoinColumn(name = "week_id", nullable = false)
-    private  Week week;
 
 
 

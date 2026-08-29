@@ -21,54 +21,80 @@ import java.io.IOException;
 
 @Component
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
-private final HandlerExceptionResolver handlerExceptionResolver;
 
-private final JwtService jwtService;
+    private final HandlerExceptionResolver handlerExceptionResolver;
+    private final JwtService jwtService;
+    private final UserDetailsService userDetailsService;
 
-private final UserDetailsService userDetailsService;
-
-public JwtAuthenticationFilter( JwtService jwtService  , HandlerExceptionResolver handlerExceptionResolver,
-UserDetailsService userDetailsService  ){
-    this.jwtService = jwtService;
-    this.handlerExceptionResolver = handlerExceptionResolver;
-    this.userDetailsService = userDetailsService;
-
-}
-
-@Override
-protected void doFilterInternal(@NotNull HttpServletRequest request,
-                                @NotNull HttpServletResponse response,
-                                @NotNull FilterChain filterChain) throws ServletException, IOException {
-    final String AuthHeader = request.getHeader("Authorization");
-    if(AuthHeader == null || AuthHeader.startsWith("Baerer") ){
-        filterChain.doFilter(request ,response);
-        return;
+    public JwtAuthenticationFilter(
+            JwtService jwtService,
+            HandlerExceptionResolver handlerExceptionResolver,
+            UserDetailsService userDetailsService
+    ) {
+        this.jwtService = jwtService;
+        this.handlerExceptionResolver = handlerExceptionResolver;
+        this.userDetailsService = userDetailsService;
     }
-    try {
-        final String jwt = AuthHeader.substring(7);
-        final String userEmail = jwtService.extractUsername(jwt);
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        if(userEmail !=null && authentication ==null){
-            UserDetails userDetails = this.userDetailsService.loadUserByUsername(userEmail);
-            if(jwtService.isTokenValid(jwt ,userDetails)){
-                UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(
-                        userDetails ,
-                        null,
-                        userDetails.getAuthorities()
-                );
-                authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
-                SecurityContextHolder.getContext().setAuthentication(authToken);
+
+    @Override
+    protected void doFilterInternal(
+            @NotNull HttpServletRequest request,
+            @NotNull HttpServletResponse response,
+            @NotNull FilterChain filterChain
+    ) throws ServletException, IOException {
+
+        if ("OPTIONS".equalsIgnoreCase(request.getMethod()) || request.getServletPath().startsWith("/auth/")) {
+            filterChain.doFilter(request, response);
+            return;
+        }
+
+        final String authHeader = request.getHeader("Authorization");
+
+        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+            filterChain.doFilter(request, response);
+            return;
+        }
+
+        try {
+            final String jwt = authHeader.substring(7);
+            final String userEmail = jwtService.extractUsername(jwt);
+
+            Authentication authentication =
+                    SecurityContextHolder.getContext().getAuthentication();
+
+            if (userEmail != null && authentication == null) {
+
+                UserDetails userDetails =
+                        userDetailsService.loadUserByUsername(userEmail);
+
+                if (jwtService.isTokenValid(jwt, userDetails)) {
+
+                    UsernamePasswordAuthenticationToken authToken =
+                            new UsernamePasswordAuthenticationToken(
+                                    userDetails,
+                                    null,
+                                    userDetails.getAuthorities()
+                            );
+
+                    authToken.setDetails(
+                            new WebAuthenticationDetailsSource()
+                                    .buildDetails(request)
+                    );
+
+                    SecurityContextHolder.getContext()
+                            .setAuthentication(authToken);
+                }
             }
 
+            filterChain.doFilter(request, response);
 
-
+        } catch (Exception exception) {
+            handlerExceptionResolver.resolveException(
+                    request,
+                    response,
+                    null,
+                    exception
+            );
         }
-        filterChain.doFilter(request ,response);
-
-
-    }catch (Exception exception){
-        handlerExceptionResolver.resolveException(request , response ,null , exception);
     }
-
-}
 }
